@@ -1,0 +1,199 @@
+/* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  background: #00F260;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0575E6, #00F260);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0575E6, #00F260);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.container {
+  max-width: 800px;
+  margin: 80px auto;
+  /* Aumentamos el margen superior */
+  padding: 20px;
+  background-color: #fff;
+  background: #C9D6FF;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E2E2E2, #C9D6FF);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+h1 {
+  margin-top: 0;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* NoteForm Styles */
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  word-wrap: break-word;
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+button[type="buttonEdit"] {
+  background-color: #adab1c;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 2px;
+  min-width: 100px;
+}
+
+button[type="buttonDelete"] {
+  background-color: #f71414;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 2px;
+  min-width: 100px;
+}
+
+button[type="buttonEdit"]:hover {
+  background-color: #d3d03b;
+}
+
+button[type="buttonDelete"]:hover {
+  background-color: #df3535;
+}
+
+/* NoteList Styles */
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: space-between;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+strong {
+  font-weight: bold;
+}
+
+button[type="buttonCancel"] {
+  background-color: #1ceee3;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button[type="buttonCancel"]:hover {
+  background-color: #8344f8;
+}
+
+button[type="buttonSave"] {
+  background-color: #ee7e16;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button[type="buttonSave"]:hover {
+  background-color: #e7af36;
+}
+
+/* Form Button Styles */
+
+button.fixed-button {
+  position: fixed;
+  bottom: 50px; /* Ajusta este valor */
+  right: 50px; /* Ajusta este valor */
+  z-index: 100;
+}
+
+.button-container {
+  width: 100%;
+  display: block;
+  align-items: center;
+  flex-direction: column;
+}
+
