@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { HashRouter } from 'react-router-dom';
 import NoteForm from './NoteForm';
 import NoteList from './NoteList';
 
@@ -11,12 +12,11 @@ const App = () => {
     if (savedNotes) {
       setNotes(JSON.parse(savedNotes));
     }
-  }, []); // <- No cambia, solo se ejecuta una vez
+  }, []); // No cambia, solo se ejecuta una vez
 
   useEffect(() => {
     localStorage.setItem('notes', JSON.stringify(notes));
-  }, [notes]); // <- Se ejecuta cada vez que cambia el estado de notes
-
+  }, [notes]); // Se ejecuta cada vez que cambia el estado de notes
 
   const handleAddNote = (note) => {
     setNotes([...notes, { id: new Date().getTime(), ...note }]);
@@ -35,16 +35,18 @@ const App = () => {
       ? notes.reduce((total, note) => total + note.grade, 0) / notes.length
       : 0;
 
-      return (
-        <div className='container'>
-          <h1>Gestor de notas</h1>
-          <div className="note-form-list-container">
-            <NoteForm onAddNote={handleAddNote} note={editingNote} onEditNote={handleEditNote} />
-            <NoteList notes={notes} onEditNote={handleEditNote} onDeleteNote={handleDeleteNote} />
-          </div>
-          <p>Promedio de calificaciones: {averageGrade.toFixed(2)}</p>
+  return (
+    <HashRouter>
+      <div className='container'>
+        <h1>Gestor de notas</h1>
+        <div className="note-form-list-container">
+          <NoteForm onAddNote={handleAddNote} note={editingNote} onEditNote={handleEditNote} />
+          <NoteList notes={notes} onEditNote={handleEditNote} onDeleteNote={handleDeleteNote} />
         </div>
-      );
-    }
+        <p>Promedio de calificaciones: {averageGrade.toFixed(2)}</p>
+      </div>
+    </HashRouter>
+  );
+}
 
 export default App;
